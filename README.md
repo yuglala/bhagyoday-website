@@ -83,3 +83,32 @@ For agriculture
     </script>
 </body>
 </html>
+class CustomNavbar extends HTMLElement {
+    connectedCallback() {
+        this.innerHTML = `
+        <nav class="bg-primary text-white px-4 py-3 shadow-lg">
+            <div class="container mx-auto flex items-center justify-between">
+                <a href="#" class="font-bold text-2xl tracking-wide">Bhagyoday Agro</a>
+                <ul class="flex space-x-6 text-lg">
+                    <li><a href="#products" class="hover:underline">Products</a></li>
+                    <li><a href="#contact" class="hover:underline">Contact</a></li>
+                    <li><a href="#testimonial" class="hover:underline">Testimonials</a></li>
+                </ul>
+            </div>
+        </nav>
+        `;
+    }
+}
+customElements.define('custom-navbar', CustomNavbar);
+class CustomFooter extends HTMLElement {
+    connectedCallback() {
+        this.innerHTML = `
+        <footer class="bg-secondary text-white py-6 mt-12">
+            <div class="container mx-auto text-center">
+                <span>&copy; ${new Date().getFullYear()} Bhagyoday Agro Centre. All rights reserved.</span>
+            </div>
+        </footer>
+        `;
+    }
+}
+customElements.define('custom-footer', CustomFooter);
